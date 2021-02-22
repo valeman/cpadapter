@@ -4,7 +4,7 @@ import seaborn
 from typing import List
 
 def band_interval_plot(y: np.ndarray, lower: np.ndarray, upper: np.ndarray, conf_percentage: float, sort: bool) -> None:
-	r"""Function used to plot data and it's confidence interval 
+	r"""Function used to plot the data in `y` and it's confidence interval 
 
 	This function plots `y`, with a line plot, and the interval defined by the
 	`lower` and `upper` bounds, with a band plot.
@@ -46,7 +46,7 @@ def conditional_band_interval_plot(y, lower, upper, sort):
 	r"""Function for plotting the data in `y` and it's confidence interval
 
 	This function plots `y` and it's confidence interval. The confidence
-	interval is green when de `y` observation falls inside the predicted
+	interval is green when the `y` observation falls inside the predicted
 	interval, on the other hand, it's red when it doesn't. The interval is
 	defined by the `lower` and `upper` bound.
 
@@ -89,7 +89,7 @@ def line_interval_plot(y, lower, upper, sort):
 	The `y` data is represented by a big blue point. On the other had, 
 	the `lower` bound of the interval is represented by a smaller red point
 	and the `upper` bound by a smmaler blue point, both bounds are connected
-	by a black vertical line.
+	by a vertical line.
 
 	Parameters
 	----------
@@ -133,7 +133,7 @@ def classes_in_interval(preds):
 	return classes
 
 def plot_class_interval(y: np.ndarray, preds: np.ndarray) -> None:
-	r"""Function thas shows the classes in `y` and the classes in their confidence interval.
+	r"""Function thas shows the classes in `y` and the classes in it's confidence interval.
 
 	The class for every observation in `y` is represented by a white dot,
 	while the classes in the interval `preds` can be seen as a red *.
@@ -172,7 +172,7 @@ def class_histogram(y: np.ndarray, preds: np.ndarray) -> None:
 
 	There are two histograms in the plot shown by this fuction, the red one corresponds to the
 	class histogram of the input `y`. The blue one is the total class histogram of the predicted
-	confidence interval.
+	confidence interval `preds`.
 
 	Parameters
 	----------
