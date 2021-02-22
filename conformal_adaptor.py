@@ -25,7 +25,7 @@ def NonConformistAdapter(model):
     Parameters
     ----------
     model:
-        Model we want to adatp in order to use it with nonconformist.
+        Model we want to adapt in order to use it with nonconformist.
 
     Returns
     -------
@@ -64,29 +64,6 @@ class Adapt_to_CP():
     must be given, indicating if the model belongs to scikit learn (True) or
     not (False).
     """
-
-    '''
-    - fit: this method fits the underlying model using to the training data (x_train) and 
-    the training targets (y_train) given as input.
-    - calibrate: with this method the inductive conformal predictor is calibrated and
-    the nonconformity scores are calculated, using the calibration data (x_cal) and 
-    targets (y_cal) given.
-    - predict: this method returns the interval predicted by the inductive conformal
-    predictor and the values predicted by the fitted model, for a given test data 
-    (x_test) and confidence level (confidence).
-      - Classification: in this case the returned tuple contains two elements. The
-      first one is the boolean matrix, indicating the confidence interval for every
-      obsevation. The second one is the class predicted by the underlying model for
-      every test instance.
-      - Regression: in this case the returned tuple has three elements. The fist one is
-      an array with the values of the lower bound of the interval. Then, the second
-      element is an array with the predicted target values. The last element corresponds
-      to the array that contains the upper bound of the predicted interval.
-    - calibrate_and_predict: this method method is equal to runnign the calibrate 
-    and the predict methods consecutively. Accordingly, the inputs are the calibration
-    data (x_cal) and targets (y_cal), the test data (x_test) and the confidence level
-    desired for the predicted interval.
-    '''
 
     def __init__(self, model, sklearn_model: bool):
         r"""__init__ method
