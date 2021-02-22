@@ -11,9 +11,9 @@ def right_guess(y: np.ndarray,
      Parameters
      ----------
      y: numpy.ndarray
-          Array of real or predicted classes with legth num_samples
+          Array of real or predicted classes with length num_samples
      preds: numpy.ndarray
-          Array containing the confidence interval predicted for clasification cases.
+          Array containing the confidence interval predicted for classification cases.
           This type of interval is a boolean matrix with size [num_samples, num_classes],
           where num_classes is the total number of possible classes for the data.
      
@@ -34,9 +34,9 @@ def right_guess(y: np.ndarray,
 
 
 def uncertainty(preds: np.ndarray) -> float:
-     r"""Function used to calculate the fraction of uncertain prediction for the confidence interval
+     r"""Function used to calculate the fraction of uncertainty of the predicted confidence interval
 
-     Sometimes the nonconformist indictive conformal predictor returns an interval that contains all
+     Sometimes the nonconformist inductive conformal predictor returns an interval that contains all
      the possile classes. In these cases no information is provided, thus adding uncertainty to the
      prediction. This function returns the fraction of times the interval created has all the classes.
 
@@ -44,9 +44,9 @@ def uncertainty(preds: np.ndarray) -> float:
      ----------
      preds: numpy.ndarray
           The confidence interval, represented by a numpy.ndarray of boolean
-     values with size (num_samples, num_classes), where num_classes is the total
-     number of classes for the data, and num_samples is the number of samples used
-     to create the matrix.
+          values with size (num_samples, num_classes), where num_classes is the total
+          number of classes for the data, and num_samples is the number of samples used
+          to create the matrix.
 
      Returns
      -------
@@ -64,9 +64,9 @@ def uncertainty(preds: np.ndarray) -> float:
 def width(preds: np.ndarray) -> float:
      r"""Function that calculates the normalized width of a classification confidence interval
 
-     This mesure represents the with of the classification interval `preds`.
-     It's calculated as the sum of classes in the interval predicted for
-     every class, dived by the total number of clases.
+     This measure represents the with of the classification interval `preds`.
+     It's calculated as the average number classes in the predicted intervals for
+     every sample, dived by the total number of clases.
 
      Parameters
      ----------
@@ -130,7 +130,7 @@ def pinaw(real: np.ndarray, lower: np.ndarray, upper: np.ndarray) -> float:
 
      The PINAW (Prediction Interval Normalized Width) represents the average
      interval width, dived by the range of the data (max value - min value). This 
-     fuction calcilates de PINAW for a regression interval
+     fuction calculates de PINAW for a regression interval.
 
      Parameters
      ----------
@@ -160,7 +160,7 @@ def relative_width(real: np.ndarray, lower: np.ndarray, upper: np.ndarray) -> fl
      r"""Fuction used fo calculating the average width relative to the value of the target features
 
      The measure given by this fuction is calculated as the median value of the interval
-     width diveded by the target value in `real`.
+     width diveded by the target values in `real`.
 
      Parameters
      ----------
@@ -187,7 +187,7 @@ def relative_width(real: np.ndarray, lower: np.ndarray, upper: np.ndarray) -> fl
 def relative_mean_width(real: np.ndarray, lower: np.ndarray, upper: np.ndarray) -> float:
      r"""Fuction used for calculating the average width relative to the mean value of the target feature.
 
-     The measure returned by this function is calculated as the mean interval width divides by
+     The measure returned by this function is calculated as the mean interval width divided by
      the mean target value in `real`.
 
      Parameters
