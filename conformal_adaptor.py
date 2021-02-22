@@ -129,7 +129,7 @@ class Adapt_to_CP():
         r"""Method used to calculate the nonconformity scores
 
         To create the confidence intervals we need a set of nonconformity scores,
-        and i the classification cases their probability distribution. This method
+        and, in classification cases, their probability distribution. This method
         uses the fitted underlying model and calculates de scores, thus calibrating
         the inductive conformal predictor.
 
@@ -157,7 +157,7 @@ class Adapt_to_CP():
         predictions for `x_test`. The information returned for classification is different from the
         one returned for regression. In classification cases the tuple returned has two elements: a
         numpy.ndarray with a matrix of boolean values and a numpy.ndarray that contains the class
-        predictions. Onthe other hans, in regression cases the tuple returned has 3 elements: a numpy.ndaaray
+        predictions. On the other hand, in regression cases the tuple returned has 3 elements: a numpy.ndarray
         with the lower bound values, a numpy.ndarray with the predicted target values and a numpy.ndarray
         with the upper bound values.
 
@@ -189,9 +189,9 @@ class Adapt_to_CP():
             return self.icp.predict(x_test, significance=sig)[:, 0], self.model.predict(x_test), self.icp.predict(x_test, significance=sig)[:, 1]
 
     def calibrate_and_predict(self, x_cal: np.ndarray, y_cal: np.ndarray, x_test: np.ndarray, confidence: bool):
-        r"""Method udes for calibrating the conformal predictor and predicting target values and confidence interval
+        r"""Method used for calibrating the conformal predictor and predicting target values and confidence interval
 
-        This method method is equal to runnign the calibrate and the predict methods consecutively. 
+        This method is equal to running the calibrate and the predict methods consecutively. 
         Accordingly, the inputs are the calibration data `x_cal` and targets `y_cal`, the test data `x_test` and the
         confidence level `confidence` desired for the predicted interval. The tuple returned contains
         the predicted values and the confidence interval.
