@@ -7,7 +7,7 @@ def train_cal_test_split(df: pd.DataFrame,
                          train_percentage: float,
                          cal_percentage: float,
                          random: bool) -> Tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
-    r"""Function used for spliting the dataset in training, calibration and test subsets
+    r"""Function used for splitting the dataset in training, calibration and test subsets
 
     This fuction splits the data in `df` in three sets acording to the percentajes given as input:
     `train_percentage` and `cal_percentage`. The Tuple returned has 6 elements: the training data, the training
