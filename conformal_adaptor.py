@@ -146,12 +146,12 @@ class Adapt_to_CP():
 
         Notes
         -----
-        It's very important to make sure the calibration data is differet from the training data.
+        It's very important to make sure the calibration data is different from the training data.
         """
         self.icp.calibrate(x_cal, y_cal)
 
     def predict(self, x_test: np.ndarray, confidence: float):
-        r"""Method that produces the prediction and the confidence interval
+        r"""Method that returns the prediction and the confidence interval
 
         This method returns the interval with a confidence level of `confidence` and the target
         predictions for `x_test`. The information returned for classification is different from the
@@ -178,7 +178,7 @@ class Adapt_to_CP():
         -----
         The `x_test` data must have the same features as the data used for training and calibration,
         and they must be in the same order.
-        The level of confidence hast to me a fraction between 0 and 1.
+        The level of confidence hast to be a fraction between 0 and 1.
         """
         sig = 1 - confidence
         if is_classifier(self.model):
@@ -189,7 +189,7 @@ class Adapt_to_CP():
             return self.icp.predict(x_test, significance=sig)[:, 0], self.model.predict(x_test), self.icp.predict(x_test, significance=sig)[:, 1]
 
     def calibrate_and_predict(self, x_cal: np.ndarray, y_cal: np.ndarray, x_test: np.ndarray, confidence: bool):
-        r"""Method used for calibrating the conformal predictor and predicting target values and confidence interval
+        r"""Method used for calibrating the conformal predictor and predicting target values and the confidence interval
 
         This method is equal to running the calibrate and the predict methods consecutively. 
         Accordingly, the inputs are the calibration data `x_cal` and targets `y_cal`, the test data `x_test` and the
@@ -217,7 +217,7 @@ class Adapt_to_CP():
         -----
         Both the calibration and the test data must have the same features (scale and order) as the data
         used for training the underlying model.
-        The level of confidence hast to me a decimal between 0 and 1.
+        The level of confidence hast to be a decimal between 0 and 1.
         """
         sig = 1 - confidence
         self.icp.calibrate(x_cal, y_cal)
