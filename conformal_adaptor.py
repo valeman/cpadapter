@@ -178,7 +178,7 @@ class Adapt_to_CP():
         -----
         The `x_test` data must have the same features as the data used for training and calibration,
         and they must be in the same order.
-        The level of confidence hast to be a fraction between 0 and 1.
+        The level of confidence has to be a fraction between 0 and 1.
         """
         sig = 1 - confidence
         if is_classifier(self.model):
@@ -217,7 +217,7 @@ class Adapt_to_CP():
         -----
         Both the calibration and the test data must have the same features (scale and order) as the data
         used for training the underlying model.
-        The level of confidence hast to be a decimal between 0 and 1.
+        The level of confidence has to be a decimal between 0 and 1.
         """
         sig = 1 - confidence
         self.icp.calibrate(x_cal, y_cal)
