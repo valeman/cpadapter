@@ -27,6 +27,7 @@ class MyClassifierAdapter(ClassifierAdapter):
             Model we want to adapt to use with nonconformist.
         """
         super(MyClassifierAdapter, self).__init__(model, fit_params)
+
     def fit(self, x: np.ndarray, y: np.ndarray) -> None:
         r""" Method for fitting the underlying model.
 
@@ -45,6 +46,7 @@ class MyClassifierAdapter(ClassifierAdapter):
         None
         """
         self.model.fit(x, y)
+
     def predict(self, x: np.ndarray):
         r"""Method for generating predictions from the underlying model
 
@@ -84,6 +86,7 @@ class MyRegressorAdapter(RegressorAdapter):
             Model we want to adapt to use with nonconformist.
         """
         super(MyRegressorAdapter, self).__init__(model, fit_params)
+
     def fit(self, x: np.ndarray, y: np.ndarray) -> None:
         r""" Method for fitting the underlying model.
 
@@ -102,6 +105,7 @@ class MyRegressorAdapter(RegressorAdapter):
         None
         """
         self.model.fit(x, y)
+
     def predict(self, x: np.ndarray):
         r"""Method for generating predictions from the underlying model
 
@@ -127,6 +131,7 @@ class MyPreTrainedRegressorAdapter(RegressorAdapter):
     lightgbm.Booster fuction.
 
     """
+
     def __init__(self, model, fit_params=None):
         r""" __init__ method.
 
@@ -139,6 +144,7 @@ class MyPreTrainedRegressorAdapter(RegressorAdapter):
             Pre-trained LGBMRegressor model we want to adapt to use with nonconformist.
         """
         super(MyRegressorAdapter, self).__init__(model, fit_params)
+
     def fit(self, x: np.ndarray, y: np.ndarray) -> None:
         r""" Method for fitting the underlying model.
 
@@ -158,6 +164,7 @@ class MyPreTrainedRegressorAdapter(RegressorAdapter):
         None
         """
         pass
+    
     def predict(self, x: np.ndarray):
         r"""Method for generating predictions from the underlying model
 

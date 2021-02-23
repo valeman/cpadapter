@@ -79,8 +79,10 @@ def conditional_band_interval_plot(y, lower, upper, sort):
 		upper = upper[idx]
 	fig, ax = plt.subplots(figsize=(14, 8))
 	ax.plot(y.reshape(-1), 'o', label='data')
-	ax.fill_between([*range(y.shape[0])], lower, upper, label='target inside the interval', alpha=0.3, color='g', where=[l <= y_i and y_i <= u for (l, y_i, u) in zip(lower, y, upper)])
-	ax.fill_between([*range(y.shape[0])], lower, upper, label='target outside the interval', alpha=0.3, color='r', where=[l >= y_i or y_i >= u for (l, y_i, u) in zip(lower, y, upper)])
+	ax.fill_between([*range(y.shape[0])], lower, upper, label='target inside the interval', 
+					alpha=0.3, color='g', where=[l <= y_i and y_i <= u for (l, y_i, u) in zip(lower, y, upper)])
+	ax.fill_between([*range(y.shape[0])], lower, upper, label='target outside the interval',
+					alpha=0.3, color='r', where=[l >= y_i or y_i >= u for (l, y_i, u) in zip(lower, y, upper)])
 	ax.legend()
 
 def line_interval_plot(y, lower, upper, sort):
