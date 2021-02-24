@@ -9,7 +9,7 @@ from nonconformist.base import RegressorAdapter
 from nonconformist.nc import RegressorNc
 from sklearn.base import is_classifier, is_regressor
 import lightgbm as lgbm
-from adapter_classes import MyClassifierAdapter, MyRegressorAdapter, MyPreTrainedRegressorAdapter
+from .adapter_classes import MyClassifierAdapter, MyRegressorAdapter, MyPreTrainedRegressorAdapter
 
 # non sklearn adapter funtion
 def NonConformistAdapter(model):
