@@ -21,12 +21,10 @@ pip install cpadapter
 
 ## Usage
 
-```
-from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+```python
+from sklearn.ensemble import RandomForestRegressor,
 import lightgbm as lgbm
 import pandas as pd
-import sys
-sys.path.append("../")
 import cpadapter
 from cpadapter.utils import train_cal_test_split
 from cpadapter.visualization import conditional_band_interval_plot
@@ -62,7 +60,7 @@ Note that most of the data points are within the confidence interval (we expect 
 
 Now we can use the exact same syntax to obtain the confidence interval for a different model (from lightgbm in this case)
 
-```
+```python
 #2. Fit a light-gbm model
 #########################
 lgbm_model = lgbm.LGBMRegressor(n_estimators=100)
